@@ -5,10 +5,9 @@ namespace MdAuthService.Interfaces
 {
     public interface IAuthService
     {
-        Task<LoginDTO> LoginAsync(string username, string password);
-        Task<RegisterDTO> RegisterAsync(RegisterRequestBody content);
-        string ComputeHmacSha256(string password, string username);
-        string GenerateToken(AppUser user);
+        Task<LoginDTO> LoginAsync(LoginRB content);
+        Task<RegisterDTO> RegisterAsync(RegisterRB content);
+        Task<ResetPasswordDTO> ResetPasswordAsync(ResetPasswordRB content);
     }
 
 }
