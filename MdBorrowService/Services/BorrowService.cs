@@ -20,7 +20,7 @@ namespace MdBorrowService.Services
             }
             return books;
         }
-        public async Task<List<Borrow>> BorrowsAsync(long bookId, int userId, string token)
+        public async Task<List<Borrow>> BorrowsAsync( int userId, string token)
         {
             var borrows = await db.Borrows.Where(p => p.UserId == userId).ToListAsync();
             return borrows;
@@ -87,17 +87,6 @@ namespace MdBorrowService.Services
             //    book.Quantity++;
             //}
 
-            await db.SaveChangesAsync();
-            return true;
-        }
-
-        public async Task<bool> UpdateBorrowStatusAsync(long borrowId, BorrowStatus status)
-        {
-            var borrow = await db.Borrows.FindAsync(borrowId);
-            if (borrow == null)
-                return false;
-
-            borrow.Status = status;
             await db.SaveChangesAsync();
             return true;
         }

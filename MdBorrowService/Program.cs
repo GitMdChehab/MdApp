@@ -76,6 +76,7 @@ namespace MdBorrowService
             }
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
