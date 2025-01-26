@@ -1,4 +1,4 @@
-﻿namespace MdBookService.Models
+﻿namespace MdBorrowService.Models
 {
     public class BookDTO 
     {

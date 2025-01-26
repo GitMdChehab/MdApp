@@ -1,0 +1,6 @@
+@MdBorrowService_HostAddress = http://localhost:5208
+
+GET {{MdBorrowService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
