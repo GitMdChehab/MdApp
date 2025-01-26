@@ -22,7 +22,7 @@ namespace MdBookService.Services
             if (!string.IsNullOrEmpty(request.AuthorName)) query = (IIncludableQueryable<Book, BookCategory>)query.Where(p => p.Author.AuthorName.Contains(request.AuthorName.Trim()));
             if (!string.IsNullOrEmpty(request.BookName)) query = (IIncludableQueryable<Book, BookCategory>)query.Where(p => p.Author.AuthorName.Contains(request.BookName.Trim()));
             if (!string.IsNullOrEmpty(request.CategoryName)) query = (IIncludableQueryable<Book, BookCategory>)query.Where(p => p.Author.AuthorName.Contains(request.CategoryName.Trim()));
-
+            if (request.BookIds != null && request.BookIds.Count > 0) query = (IIncludableQueryable<Book, BookCategory>)query.Where(p => request.BookIds.Contains(p.Id));
             return await query.Select(b => new BookDTO
             {
                 Id = b.Id,

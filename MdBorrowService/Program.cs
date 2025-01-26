@@ -1,13 +1,10 @@
-using MdAuthorService.Services;
-using MdBookService.Data;
-using MdBookService.Interfaces;
-using MdBookService.Services;
+using MdBorrowService.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace MdBookService
+namespace MdBorrowService
 {
     public class Program
     {
@@ -15,9 +12,10 @@ namespace MdBookService
         {
             var builder = WebApplication.CreateBuilder(args);
             var config = builder.Configuration;
-            builder.Services.AddDbContext<BookContext>(options =>
-                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-             );
+
+            builder.Services.AddDbContext<BorrowContext>(options =>
+                options.UseSqlServer(config.GetConnectionString("DefaultConnection"))
+            );
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
@@ -48,9 +46,6 @@ namespace MdBookService
                 });
             });
 
-            builder.Services.AddScoped<IBookService, BookService>();
-            builder.Services.AddScoped<IBookCategoryService, BookCategoryService>();
-            builder.Services.AddScoped<IAuthorService, AuthorService>();
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
             {
@@ -67,12 +62,12 @@ namespace MdBookService
 
             builder.Services.AddAuthorization();
 
+
             builder.Services.AddControllers();
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
