@@ -31,8 +31,7 @@ namespace MdAuthService
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = "YourIssuer", // Replace with your issuer
-                    ValidAudience = "YourAudience", // Replace with your audience
+                    ValidIssuer = config["Jwt:Issuer"], // Replace with your issuer
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:Key"]!))
                 };
             });

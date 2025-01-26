@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MdBookService", "MdBookServ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MdBorrowService", "MdBorrowService\MdBorrowService.csproj", "{79EF84F2-3024-4872-A828-12552D27B3AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MdGateway", "MdGateway\MdGateway.csproj", "{E66040FA-62E3-46C8-9172-1AA64DDBDFA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{79EF84F2-3024-4872-A828-12552D27B3AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79EF84F2-3024-4872-A828-12552D27B3AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79EF84F2-3024-4872-A828-12552D27B3AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E66040FA-62E3-46C8-9172-1AA64DDBDFA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E66040FA-62E3-46C8-9172-1AA64DDBDFA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E66040FA-62E3-46C8-9172-1AA64DDBDFA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E66040FA-62E3-46C8-9172-1AA64DDBDFA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
